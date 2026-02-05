@@ -50,7 +50,7 @@ To that end, were going to run OpenClaw in a virtualized macOS system.
 Running UTM macOS VM is "cheap" as its native, but it uses memory for a whole new OS and the apps, plus storage.
 You realistically want hardware with 32 GB of ram to give UTM 16GB or so. Good news is storage requirements are minimal on top of the OS. 
 
-###The Inference Server
+### The Inference Server
 
 Now the nuance is that there are many different inference servers, and many models, and a lot of nuance to get right to have this work.
 
@@ -114,6 +114,18 @@ Our Model needs to
 | LLamaCPP Server | ✔️ |  ❌ | LLama CPP | ❌ | ⚠️ No Responses API means models arent as performant with their context or tool usage.<br/><br/>Doesnt support multi modal|
 | MLX LM Server | ✔️ |  ❌ | MLX | maybe via mx.distributed config ? | ⚠️ No Responses API means models arent as performant with their context or tool usage.<br/><br/>Doesnt support multi modal
 | MLX Openai Server  | ✔️ | ️❌ | MLX | ❌  | ⚠️ Doesnt use the model request param (it serves one model).<br/><br/>No Responses API means models arent as performant with their context or tool usage.<br/><br>Slow, even though using MLX?<br/><br> Not user friendly, requires deep knowlege of model specifics to get command line arguments correct.<br/><br/>Crashed kernel. |
+
+### Models 
+
+
+* Kimi K2 (only massive memory Mac Studios)
+* GPT OSS
+* Step 3.5 Flash
+* Qwen 3 Coder Next
+* Qwen 3 Next 
+* Qwen 3 VL (this model has both vision and text backbone which is useful)
+* GLM 4.7 Flash (text only, very capbable but MLX implementation currently has tool calling bug)
+* GLM 4.6v FLash (Text and vision)
 
 
 Testing GLM 4.7 local provider via macOS inference. 
