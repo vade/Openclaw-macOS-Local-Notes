@@ -113,20 +113,16 @@ Our Model needs to
 | vLLM-MLX | ✔️ |  ❌ | MLX | ❌ | ⚠️ No Responses API means models arent as performant with their context or tool usage |
 | LLamaCPP Server | ✔️ |  ❌ | LLama CPP | ❌ | ⚠️ No Responses API means models arent as performant with their context or tool usage.<br/><br/>Doesnt support multi modal|
 | MLX LM Server | ✔️ |  ❌ | MLX | maybe via mx.distributed config ? | ⚠️ No Responses API means models arent as performant with their context or tool usage.<br/><br/>Doesnt support multi modal
-| MLX Openai Server  | ✔️ | ️❌ | MLX | ❌  | ⚠️ Doesnt use the model request param (it serves one model).<br/><br/>No Responses API means models arent as performant with their context or tool usage. <br/><br> Not user friendly, requires deep knowlege of model specifics to get command line arguments correct.<br/><br/>Crashed kernel. |
+| MLX Openai Server  | ✔️ | ️❌ | MLX | ❌  | ⚠️ Doesnt use the model request param (it serves one model).<br/><br/>No Responses API means models arent as performant with their context or tool usage.<br/><br>Slow, even though using MLX?<br/><br> Not user friendly, requires deep knowlege of model specifics to get command line arguments correct.<br/><br/>Crashed kernel. |
 
 
 Testing GLM 4.7 local provider via macOS inference. 
 
-
+Issues im tracking related to observed challenges.
 
 https://github.com/openclaw/openclaw/issues/7725
-
 https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/189
-
 https://github.com/cubist38/mlx-openai-server/issues/181#issuecomment-3845354720
 https://github.com/cubist38/mlx-openai-server/issues/189#issuecomment-3850780634
-
 https://github.com/ml-explore/mlx-lm/pull/792
-
 https://github.com/ggml-org/llama.cpp/issues/19138
