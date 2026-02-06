@@ -17,14 +17,14 @@ Note - this is not an OpenClaw install guide. This is more of an opionated walkt
 
 # TLDR tell me what you learned
 
-1 - Use LM Studio - its the most reliable back end
-2 - The same moder running under GGUF vs MLX performs differently (not token speed, but prediction quality) - most of this is due to differently tuned default params for the model out of the box (temperature, repetition punishment factor, etc). Tune your models
-3 - Stick with the `completions` API. While LM Studio supports the more modern `responses` compatible OpenAI endpoint, due to subtle bugs in some models, and a bug in LM Studio, it actually makes things worrse
+1. Use LM Studio - its the most reliable back end
+2. The same moder running under GGUF vs MLX performs differently (not token speed, but prediction quality and tool calling experience) - most of this is due to differently tuned default params for the model out of the box (temperature, repetition punishment factor, etc). Tune your models and experiment with runtimes. 
+3.  Stick with the `completions` API. While LM Studio supports the more modern `responses` compatible OpenAI endpoint, due to subtle bugs in some models, and a bug in LM Studio, it actually makes things worrse
 
 Model choice is personal preference, but with my hardware (48GB M4 Pro ) ive had success with ~30 GB mmodels with additional headroom for long context windows, LMStudio typically hits 45Gb ram total:
 
-* GLM 4.5 + `completions` api - tool calling works. I hit problems with `responses`. This model is fast and generally pretty capable.
-* Qwen 3 VL with `responses` seemed to work, but was slow enough i gave up. The natve vision backbone seemed helpful, and tool calling seemed to work.
+* GLM 4.7 Flash + `completions` api - tool calling works. I hit problems with `responses`. This model is fast and generally pretty capable.
+* Qwen 3 VL + `responses` api seemed to work, but was slow enough i gave up. The natve vision backbone seemed helpful, and tool calling seemed to work.
 
 I've tried other models to less success, and dont have resources to actually run larger models folks rave about. 
 
