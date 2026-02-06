@@ -15,6 +15,19 @@ My goal stiving for:
 The above is a big ask and the guide will cover the nuances therein.
 Note - this is not an OpenClaw install guide. This is more of an opionated walkthough of trying to reach the above goals on a budget without losing your mind.
 
+# TLDR tell me what you learned
+
+1 - Use LM Studio - its the most reliable back end
+2 - The same moder running under GGUF vs MLX performs differently (not token speed, but prediction quality) - most of this is due to differently tuned default params for the model out of the box (temperature, repetition punishment factor, etc). Tune your models
+3 - Stick with the `completions` API. While LM Studio supports the more modern `responses` compatible OpenAI endpoint, due to subtle bugs in some models, and a bug in LM Studio, it actually makes things worrse
+
+Model choice is personal preference, but with my hardware (48GB M4 Pro ) ive had success with ~30 GB mmodels with additional headroom for long context windows, LMStudio typically hits 45Gb ram total:
+
+* GLM 4.5 + `completions` api - tool calling works. I hit problems with `responses`. This model is fast and generally pretty capable.
+* Qwen 3 VL with `responses` seemed to work, but was slow enough i gave up. The natve vision backbone seemed helpful, and tool calling seemed to work.
+
+I've tried other models to less success, and dont have resources to actually run larger models folks rave about. 
+
 ## Intro 
 
 You need resources to run:
@@ -117,7 +130,6 @@ Our Model needs to
 
 ### Models 
 
-
 * Kimi K2 (only massive memory Mac Studios)
 * GPT OSS
 * Step 3.5 Flash
@@ -128,7 +140,22 @@ Our Model needs to
 * GLM 4.6v FLash (Text and vision)
 
 
-Testing GLM 4.7 local provider via macOS inference. 
+### Openclaw related stuff
+
+#### iMessages in VM
+
+Heres a fun tip to get a totally unique iMessage account for your agent. 
+
+1. Get a unique email address for your bot, and set it up in the VM (OpenClaw OS) mail client.
+2. Set up family sharing on your iCloud account on your phone or mac
+3. Add Family member, make them a child.
+4. Dont invite, but create a new child account. 
+    - Use the email from step 1
+5. Wait for the email confirmation code to arrive in the agents email.
+6. You can now sign in to iCloud from your VM
+7. Launch iMessage, and follow the OpenClaw iMessage channel install docs.
+
+### Issue tracking from this adventure: 
 
 Issues im tracking related to observed challenges.
 
