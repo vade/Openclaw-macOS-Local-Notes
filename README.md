@@ -15,7 +15,7 @@ My goal stiving for:
 The above is a big ask and the guide will cover the nuances therein.
 Note - this is not an OpenClaw install guide. This is more of an opionated walkthough of trying to reach the above goals on a budget without losing your mind.
 
-# TLDR tell me what you learned
+### TLDR tell me what you learned
 
 1. Use LM Studio - its the most reliable back end
 2. The same moder running under GGUF vs MLX performs differently (not token speed, but prediction quality and tool calling experience) - most of this is due to differently tuned default params for the model out of the box (temperature, repetition punishment factor, etc). Tune your models and experiment with runtimes. 
