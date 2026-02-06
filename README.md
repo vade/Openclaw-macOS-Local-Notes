@@ -155,6 +155,8 @@ Heres a fun tip to get a totally unique iMessage account for your agent.
 6. You can now sign in to iCloud from your VM
 7. Launch iMessage, and follow the OpenClaw iMessage channel install docs.
 
+You also have Family child controls, allowing you to monitor and secure the contacts your bot messages, and track events external to the VM, which is a nice layer of monitoring and security over the basics you have already. 
+
 ### Issue tracking from this adventure: 
 
 Issues im tracking related to observed challenges.
